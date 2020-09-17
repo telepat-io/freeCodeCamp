@@ -1,4 +1,8 @@
 /* global cy */
+import { introductionPageTests } from '../../introductionPages.js';
+
+const testTitle = 'Css';
+const pageTitle = 'Basic CSS | freeCodeCamp.org';
 
 const selectors = {
   tableOfContents: '.intro-toc',
@@ -56,26 +60,23 @@ const lessonNames = [
   'Use a media query to change a variable'
 ];
 
-const warningMessage =
-  'Note: Some browser extensions may interfere with elements on the page. ' +
-  'If the tests fail, try disabling your extensions for the most reliable ' +
-  'experience.';
+// describe('Basic Css Introduction page', function() {
+//   it('renders', () => {
+//     cy.visit(locations.index);
 
-describe('Basic Css Introduction page', function() {
-  it('renders', () => {
-    cy.visit(locations.index);
+//     cy.title().should('eq', 'Basic CSS | freeCodeCamp.org');
+//   });
 
-    cy.title().should('eq', 'Basic CSS | freeCodeCamp.org');
-  });
+//   it('renders a warning user about extensions', () => {
+//     cy.visit(locations.index);
+//     cy.get(selectors.warningMessage).contains(warningMessage);
+//   });
 
-  it('renders a warning user about extensions', () => {
-    cy.visit(locations.index);
-    cy.get(selectors.warningMessage).contains(warningMessage);
-  });
+//   it('renders a lesson index', () => {
+//     lessonNames.forEach(name => {
+//       cy.get(selectors.tableOfContents).contains('span', name);
+//     });
+//   });
+// });
 
-  it('renders a lesson index', () => {
-    lessonNames.forEach(name => {
-      cy.get(selectors.tableOfContents).contains('span', name);
-    });
-  });
-});
+introductionPageTests(testTitle, pageTitle, locations, selectors, lessonNames);
