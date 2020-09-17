@@ -9,10 +9,10 @@ export function introductionPageTests(
     'Note: Some browser extensions may interfere with elements on the page. ' +
     'If the tests fail, try disabling your extensions for the most reliable ' +
     'experience.';
+
   describe(`Basic ${testTitle} Introduction page`, function() {
     it('renders', () => {
       cy.visit(locations.index);
-
       cy.title().should('eq', pageTitle);
     });
 

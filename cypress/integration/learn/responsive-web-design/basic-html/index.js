@@ -6,8 +6,6 @@ const pageTitle = 'Basic HTML and HTML5 | freeCodeCamp.org';
 
 const selectors = {
   tableOfContents: '.intro-toc'
-  // warningMessage: '.flash-message-enter-active'
-  // pageTitle: '.intro-layout h2'
 };
 
 const locations = {
@@ -44,32 +42,5 @@ const lessonNames = [
   'Declare the Doctype of an HTML Document',
   'Define the Head and Body of an HTML Document'
 ];
-
-// const titleName = 'Introduction to Basic HTML & HTML5';
-
-// const warningMessage =
-//   'Note: Some browser extensions may interfere with elements on the page. ' +
-//   'If the tests fail, try disabling your extensions for the most reliable ' +
-//   'experience.';
-
-// describe('Basic HTML & HTML5 Introduction page', function() {
-//   it('renders', () => {
-//     cy.visit(locations.index);
-
-//     cy.title().should('eq', 'Basic HTML and HTML5 | freeCodeCamp.org');
-//   });
-
-//   //   it('renders a warning user about extensions', () => {
-//   //     cy.visit(locations.index);
-//   //     cy.get(selectors.warningMessage).contains(warningMessage);
-//   //   });
-
-//   it('renders a lesson index', () => {
-//     cy.get(selectors.pageTitle).contains(titleName);
-//     lessonNames.forEach(name => {
-//       cy.get(selectors.tableOfContents).contains('span', name);
-//     });
-//   });
-// });
 
 introductionPageTests(testTitle, pageTitle, locations, selectors, lessonNames);

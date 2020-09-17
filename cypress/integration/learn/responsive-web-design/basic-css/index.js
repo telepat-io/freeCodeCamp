@@ -60,23 +60,4 @@ const lessonNames = [
   'Use a media query to change a variable'
 ];
 
-// describe('Basic Css Introduction page', function() {
-//   it('renders', () => {
-//     cy.visit(locations.index);
-
-//     cy.title().should('eq', 'Basic CSS | freeCodeCamp.org');
-//   });
-
-//   it('renders a warning user about extensions', () => {
-//     cy.visit(locations.index);
-//     cy.get(selectors.warningMessage).contains(warningMessage);
-//   });
-
-//   it('renders a lesson index', () => {
-//     lessonNames.forEach(name => {
-//       cy.get(selectors.tableOfContents).contains('span', name);
-//     });
-//   });
-// });
-
 introductionPageTests(testTitle, pageTitle, locations, selectors, lessonNames);
