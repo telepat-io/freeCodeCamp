@@ -13,7 +13,7 @@ const selectors = {
   challenges: '.challenge-test-suite > div'
 };
 
-const url = '/learn/responsive-web-design/basic-html-and-html5';
+const url = './learn/responsive-web-design/basic-html-and-html5';
 
 const lessons = [
   {
