@@ -11,10 +11,10 @@ export function challengePageTests(topicName, baseUrl, selectors, lessons) {
 
   lessons.forEach(lesson => {
     describe(`${topicName} - ${lesson.name}`, function() {
-      const url = `${baseUrl}/${lesson.slug}`;
+      const url = `${baseUrl}${lesson.slug}`;
 
       it('renders', () => {
-        cy.wait(500);
+        // cy.wait(500);
         cy.visit(url);
 
         cy.title().should(
@@ -24,13 +24,13 @@ export function challengePageTests(topicName, baseUrl, selectors, lessons) {
       });
 
       it('renders the default output text', () => {
-        cy.wait(500);
+        // cy.wait(500);
         cy.visit(url);
         cy.get(selectors.defaultOutput).contains(defaultOutput);
       });
 
       it('shows the right number of challenges', () => {
-        cy.wait(500);
+        // cy.wait(500);
         cy.visit(url);
         cy.get(selectors.challenges).should(
           'have.length',
@@ -39,16 +39,15 @@ export function challengePageTests(topicName, baseUrl, selectors, lessons) {
       });
 
       it('shows test output when the tests are run', () => {
-        cy.wait(500);
+        // cy.wait(500);
         cy.visit(url);
         // first wait for the editor to load
         cy.get(selectors.editor, { timeout: 15000 });
         cy.get(selectors.runTestsButton)
           .click()
           .then(() => {
-            cy.get(selectors.defaultOutput)
-              .contains(runningOutput)
-              .contains(finishedOutput);
+            cy.get(selectors.defaultOutput).contains(runningOutput);
+            cy.get(selectors.defaultOutput).contains(finishedOutput);
             cy.get(selectors.successModal).should('not.be.visible');
           });
       });

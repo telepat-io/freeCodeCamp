@@ -44,9 +44,8 @@ describe('Classic challenge', function() {
     cy.get(selectors.runTestsButton)
       .click()
       .then(() => {
-        cy.get(selectors.defaultOutput)
-          .contains(runningOutput)
-          .contains(finishedOutput);
+        cy.get(selectors.defaultOutput).contains(runningOutput);
+        cy.get(selectors.defaultOutput).contains(finishedOutput);
       });
   });
 
